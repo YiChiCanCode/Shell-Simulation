@@ -1,0 +1,26 @@
+cd /stage/classes/archive/2014/spring/15400/p4shell/mpich-3.1/src/mpi
+An error has occurred
+pwd
+/Users/huangyiqi/Desktop/cs154/yichihuang-cs154-spr-22/p4shell/test-scripts
+ls
+clean.sh
+grade.py
+out
+runOneTest.sh
+ls -l
+total 32
+-rwxrwx---@ 1 huangyiqi  staff  1004 Nov 17  2021 clean.sh
+-rwxrwx---@ 1 huangyiqi  staff  5731 Nov 17  2021 grade.py
+drwxr-xr-x  4 huangyiqi  staff   128 May 30 16:08 out
+-rwxrwx---@ 1 huangyiqi  staff   853 May 30 16:07 runOneTest.sh
+cd ./
+pwd
+/Users/huangyiqi/Desktop/cs154/yichihuang-cs154-spr-22/p4shell/test-scripts
+cd timer
+An error has occurred
+pwd
+/Users/huangyiqi/Desktop/cs154/yichihuang-cs154-spr-22/p4shell/test-scripts
+cd ../
+pwd
+/Users/huangyiqi/Desktop/cs154/yichihuang-cs154-spr-22/p4shell
+exit

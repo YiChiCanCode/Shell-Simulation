@@ -1,0 +1,213 @@
+
+# ====================================================
+# Running the test scripts (grade.py)
+# ====================================================
+
+To run the test scripts, please follow this step:
+
+1. cd (pathToYour)/p4shell
+
+2. download
+
+  https://canvas.uchicago.edu/courses/42085/files/folder/Projects/Project%204%20Handouts?preview=7535432
+
+  and decompress the contents of p4 folder into your p4shell folder. Notice that having python installed 
+  (as it should be on CSIL) its necessary.
+
+3. cd test-scripts
+
+4. ./grade.py
+
+   This script will run your myshell against all the test batch files
+   in the batch-files directory.  The script will tell you how many
+   points you will receive.
+
+   You MUST run this on a CSIL machine.
+
+
+Make sure you understand the "diff" command. we are comparing your
+outputs with files in 'expected-output' folder (more below).  If there
+is a difference (even just a character difference), you will see it in
+terminal.
+
+
+# ====================================================
+# EXPECTED GRADE
+# ====================================================
+
+Please put your latest total score of running grade.py to expected-grade.txt before due.
+
+expected-grade.txt should have following format:
+expected socre: 90
+
+When we grade your project 4, we will compare our grading with your expected grade. Falling to update and submit expected-grade.txt may cause us not being able to quickly response to grading difference between your end and our end (unlikely but still possible). It is your responsibility to ensure your project 4 is graded correctly.
+
+
+# ====================================================
+# IMPORTANT NOTES
+# ====================================================
+
+    Do NOT add the test-scripts folder to your svn repository.
+    i.e. never run "svn add test-scripts"
+
+    I repeat: Do NOT add the test-scripts folder to your svn
+    repository.
+
+    Shall I repeat again? Why not! Do NOT add the test-scripts folder
+    to your svn repository.  (As mentioned in the project description,
+    your svn repository should only contain a Makefile and myshell.c)
+
+   Don't forget to run "make" on your myshell.c so that grade.py will
+   run your latest myshell.
+
+   Also, remember that there is no partial credit.  For each test
+   file, either you pass or get a zero.  Do not manually "eyeball"
+   your output with the expected output.  Always use "diff".  A single
+   space difference between your output and the expected output is
+   considered a failed test.  A test is successful if "diff" does not
+   show any difference.
+
+
+# ====================================================
+# Running one test at a time (runOneTest.sh)
+# ====================================================
+
+1. cd (pathToYour)/p4shell
+
+2. cd test-scripts
+
+3. ./runOneTest.sh
+
+We provide runOneTest.sh for your convenience.  Go ahead open this
+file with your text editor of choice.  You should feel free to modify
+this file in anyway you like.
+
+You can use this script to test a different batch file one at a time.
+You can do so by simply modifying the 'testname' variable.  Currently,
+the testname is set to "gooduser_basic" batch file.
+
+Again, this script is provided for you for convenience.
+
+
+# ====================================================
+# Batch files
+# ====================================================
+
+The batch files are located in:
+
+  /stage/classes/archive/2021/fall/15400-1/proj/p4/batch-files/
+
+ or via the web:
+
+  https://canvas.uchicago.edu/courses/42085/files/folder/Projects/Project%204%20Handouts?preview=7535432
+
+
+Yes, I know you hate long directory paths. But remember you can always
+create a symbolic link.  For example:
+
+ 1. cd (pathToYour)/p4shell
+
+ 2. ln -s /stage/classes/archive/2021/fall/15400-1/proj/p4/batch-files ./
+
+
+This batch-files/ directory contains the test files that we will use
+to grade your project:
+
+1. gooduser_basic (7 points)
+   basic build-in commands, basic ls
+
+2. gooduser_args (7 points)
+   more arguments,  empty command
+
+3. gooduser_redirection (7 points)
+   basic redirection
+
+4. gooduser_multipleCommand (7 points)
+   basic multiple commands in one line
+
+5. buildin_wrongFormat (7 points)
+   Wrong format for build-in commands (cd, pwd and exit)
+
+6. cd_toFolderNotExist (3 points)
+   cd to folder does not exist
+
+7. badcommand (4 points)
+   line too long, command does not exist.
+
+8. complexCommand (6 points)
+   ls with complex arguments, complex empty commands, spaces between
+   arguments.
+
+9. multipleCommand (8 points)
+   multiple commands in one line, some may be invalid
+
+10. complexRedirection_format (6 points)
+   test redirection parsing with spaces before and after '>',
+   [optional spaces]>[optional spaces], two '>' in one line
+
+11. advancedRedirection_format (6 points)
+   test advanced redirection parsing with spaces before and after '>+',
+   [optional spaces]>[optional spaces], two '>+' in one line
+
+12. complexRedirection_illegal (6 points)
+   redirection to a file already exit, redirection to
+   ./afolderdoesnotexit/file, >[optional spaces],
+
+13. advancedRedirection_illegal (6 points)
+   advanced redirection to a file already exit, advanced redirection to
+   ./afolderdoesnotexit/file, >+[optional spaces],
+
+14. advancedRedirection_concat (6 points)
+   advanced redirection to a file
+
+15. emptyInput (1 point)
+    test empty file
+
+16. 1MCommand (3 points)
+   a test contains a huge command
+
+
+We also perform the following tests in grade.py but they do not
+need any batch files:
+
+- Call ./myshell with more than one arguments (2 points)
+
+- Call ./myshell with a file that does not exist (2 points)
+
+- Correct filename (1 point)
+
+- Readme, makefile (5 points)
+
+
+# ====================================================
+# Expected outputs
+# ====================================================
+
+The expected outputs of the batch files are in:
+
+  /stage/classes/archive/2021/fall/15400-1/proj/p4/expected-output/
+
+  or via the web:
+
+  https://canvas.uchicago.edu/courses/37621/files/folder/Assignments?preview=6484698
+
+
+  For each test file "X", "X.stdout" contains the output from
+  stdout,  "X.stderr" from stderr.
+
+  If a test "X" contains redirection, then "X_rd_i" is the output file
+  if the redirection is valid.
+
+
+# ====================================================
+# Cleaning your output files in test-scripts/
+# ====================================================
+
+As you run some tests, you have lots of output files inside
+test-scripts.  When grade.py or runOneTest.sh is run, it first
+automatically cleans up all the output files by running clean.sh.
+
+But if you wish to clean output files manually, you can just run:
+
+  ./clean.sh
+
