@@ -1,6 +1,6 @@
 # Shell Simulation
 
-This repository contains a simple Shell Simulation program written in C++. It's designed to help students understand the working of shell commands and to provide a hands-on experience of building a shell simulation from scratch.
+This repository contains a simple Shell Simulation program written in C It's designed to help students understand the working of shell commands and to provide a hands-on experience of building a shell simulation from scratch.
 
 ## Features
 
